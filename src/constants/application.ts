@@ -1,0 +1,2 @@
+export const HOME_SERVICE_KEY = "HOME_SERVICE_KEY"
+export const API_SERVICE_KEY = "API_SERVICE_KEY"
