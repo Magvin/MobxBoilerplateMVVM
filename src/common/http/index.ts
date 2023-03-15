@@ -6,9 +6,6 @@ function transport(headers?: SomeObject<string>) {
     timeout: 4000,
     headers: {
       ...headers,
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers":
-        "Origin, X-Requested-With, Content-Type, Accept",
     },
   });
   return client;

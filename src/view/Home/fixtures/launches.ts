@@ -1,0 +1,28 @@
+export const launchesRequestMock = [
+  {
+    rocket: "5e9d0d95eda69973a809d1ec",
+    payloads: ["6243b788af52800c6e91926b"],
+    launchpad: "5e9e4501f509094ba4566f84",
+    flight_number: 196,
+    name: "O3b mPower 1,2",
+    date_utc: "2022-11-01T00:00:00.000Z",
+    date_unix: 1667260800,
+    date_local: "2022-10-31T20:00:00-04:00",
+    date_precision: "month",
+    upcoming: true,
+    id: "6243ba08af52800c6e919270",
+  },
+  {
+    rocket: "5e9d0d95eda69973a809d1ec",
+    payloads: ["6243b788af52800c6e91926b"],
+    launchpad: "5e9e4501f509094ba4566f84",
+    flight_number: 196,
+    name: "O3b mPower 2",
+    date_utc: "2022-12-01T00:00:00.000Z",
+    date_unix: 1667360800,
+    date_local: "2022-10-31T20:00:00-04:00",
+    date_precision: "month",
+    upcoming: true,
+    id: "6243ba08af52800c6e919270",
+  },
+];

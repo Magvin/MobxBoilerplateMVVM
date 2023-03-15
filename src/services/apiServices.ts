@@ -1,9 +1,10 @@
 import transport from "../common/http";
-import { TPost } from "../viewModels/types";
+import { Launches, TCompaniesInfo } from "../viewModels/types";
 const DEBUG = process.env.NODE_ENV === "development";
 export class ApiService {
+  apiKey: string | undefined = process.env.REACT_APP_SPACE_X_API;
   transport = transport();
-  async getPosts() {
+  async getCompaniesData() {
     this.transport.interceptors.request.use(
       (config) => {
         if (DEBUG) {
@@ -18,10 +19,18 @@ export class ApiService {
         return Promise.reject(error);
       }
     );
-    const { data } = await this.transport.get<any, { data: TPost[] }>(
-      "https://jsonplaceholder.typicode.com/posts"
+    const { data } = await this.transport.get<TCompaniesInfo>(
+      `${this.apiKey}/company`
     );
 
     return data;
+  }
+
+  async getLaunches() {
+    const response = await this.transport.get<Launches[]>(
+      `${this.apiKey}/launches`
+    );
+
+    return response;
   }
 }
