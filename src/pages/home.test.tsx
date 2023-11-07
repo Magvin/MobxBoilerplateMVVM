@@ -6,8 +6,6 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { BrowserRouter } from "react-router-dom";
 
-const allPosts = new Map();
-
 const server = setupServer(
   rest.get("/posts", (req, res, ctx) => {
     // respond using a mocked JSON body

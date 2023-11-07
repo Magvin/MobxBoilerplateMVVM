@@ -33,11 +33,11 @@ const PostPage = observer(() => {
   const post = store.post.byId.get(Number(params.postId));
 
   if (!post) {
-    return <div>Post not found</div>;
+    return <div data-testid="postNotFound">Post not found</div>;
   }
 
   return (
-    <div>
+    <div data-testid="post">
       <Post ellipsisBody={false} post={post} />
       <h2>Comments </h2>
       {post.comments.map((comment) => (
