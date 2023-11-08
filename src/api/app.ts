@@ -1,3 +1,4 @@
+import { AxiosInstance } from "axios";
 import AppStore from "../stores/app";
 import CommentApi from "./comment";
 import PostApi from "./post";
@@ -9,8 +10,9 @@ export default class AppApi {
   post: PostApi;
   comment: CommentApi;
 
-  client = transport();
-  constructor(store: AppStore) {
+  client: AxiosInstance;
+  constructor(store: AppStore, private baseURL?: string) {
+    this.client = transport({}, baseURL);
     this.user = new UserApi(this, store);
     this.post = new PostApi(this, store);
     this.comment = new CommentApi(this, store);

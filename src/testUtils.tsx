@@ -8,7 +8,7 @@ export const renderWithMobx = ({
   children,
   appStore,
 }: PropsWithChildren<{ appStore: AppStore }>) => {
-  const api = new AppApi(appStore);
+  const api = new AppApi(appStore, "/");
 
   return render(
     <AppContext.Provider value={{ store: appStore, api }}>

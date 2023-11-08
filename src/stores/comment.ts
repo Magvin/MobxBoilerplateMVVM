@@ -18,4 +18,8 @@ export default class CommentStore {
   @computed get all() {
     return Array.from(this.byId.values());
   }
+
+  newComment = (comment: IComment) => {
+    this.byId.set(this.byId.size + 1, new Comment(this.store, comment));
+  };
 }
